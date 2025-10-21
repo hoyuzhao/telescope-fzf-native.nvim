@@ -3,9 +3,9 @@ local ffi = require "ffi"
 local library_path = (function()
   local dirname = string.sub(debug.getinfo(1).source, 2, #"/fzf_lib.lua" * -1)
   if package.config:sub(1, 1) == "\\" then
-    return dirname .. "../build/libfzf.dll"
+    return dirname .. "../build/Release/libfzf.dll"
   else
-    return dirname .. "../build/libfzf.so"
+    return dirname .. "../build/Release/libfzf.so"
   end
 end)()
 local native = ffi.load(library_path)
